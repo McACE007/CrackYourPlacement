@@ -1,0 +1,17 @@
+// https://leetcode.com/problems/move-zeroes/
+
+class Solution {
+public:
+    void moveZeroes(vector<int>& nums) {
+        int n = nums.size();
+        int left = 0;
+        for(int right = 0; right < n; right++){
+            if(nums[right]){
+                int t = nums[left]; 
+                nums[left] = nums[right];
+                nums[right] = t;
+                left++;
+            }
+        }
+    }
+};
